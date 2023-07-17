@@ -69,8 +69,7 @@ class ProductItemDetails extends Component {
         similarProductsData: updatedSimilarProductsData,
         apiStatus: apiStatusConstants.Success,
       })
-    }
-    if (response.status === 401) {
+    } else {
       this.setState({
         apiStatus: apiStatusConstants.failure,
       })
@@ -91,7 +90,7 @@ class ProductItemDetails extends Component {
         alt="failure view"
       />
       <h1 className="product-not-found-heading">Product Not Found</h1>
-      <Link to="/Products">
+      <Link to="/products">
         <button type="button" className="button">
           Continue Shopping
         </button>
